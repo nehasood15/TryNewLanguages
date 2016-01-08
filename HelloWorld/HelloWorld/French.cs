@@ -11,14 +11,14 @@ namespace HelloWorld.Business
 
         public French(string name)
         {
-            Greeting = "Bonjour";
-            Name = name;
+            Greeting = "Bonjour"; // renames the greeting in a particlar language
+            Name = name;// assigns user entered name to the field Name of base class.
         }
-        public override string ToString()
-        {
+        //public override string ToString()
+        //{
 
-            return ($"{Greeting} {Name} !!");
+        //    return ($"{Greeting} {Name} !!");
 
-        }
+        //}
     }
 }

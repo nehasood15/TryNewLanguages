@@ -13,8 +13,8 @@ namespace HelloWorld.View
         {
                 Console.WriteLine("Enter Name");
                 string name = Console.ReadLine().ToUpper();
-
-                Console.WriteLine("Please select following choices 1. Greet in English 2. Greet in Fiji 3. Greet in French");
+           
+                Console.WriteLine("Please select following choices \n 1. Greet in English 2. Greet in Fiji 3. Greet in French");
 
                 string selection = Console.ReadLine();
 
@@ -22,6 +22,7 @@ namespace HelloWorld.View
                 Console.WriteLine(option.MenuParsing(selection, name));
 
                 Console.ReadLine();
+            
 
 
             }

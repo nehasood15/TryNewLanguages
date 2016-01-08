@@ -12,13 +12,13 @@ namespace HelloWorld.Business
         {
 
             Greeting = "Bula";
-            Name = name;
+            Name = name;//// assigns user entered name to the field Name of base class.
         }
-        public override string ToString()
-        {
+        //public override string ToString()
+        //{
 
-            return ($"{Greeting} {Name} !!");
+        //    return ($"{Greeting} {Name} !!");
 
-        }
+        //}
     }
 }

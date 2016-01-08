@@ -8,14 +8,14 @@ namespace HelloWorld.Business
 {
     class HelloWorld
     {
-       public string Greeting ;
-        public string Name;
-
+       protected string Greeting ;
+       protected string Name;
+        //TODO define more fields to enhance later
 
 
         public override string ToString()
         {
-            return base.ToString();
+            return ($"{Greeting} {Name} !!"); // returning string Hello concatenated with name
         }
 
 
