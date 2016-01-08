@@ -1,2 +1,3 @@
 # TryNewLanguages
-This is my attempt to learn new languages. Just simple hello world programs tried in different languages.
+This is my attempt to learn new languages. Just simple hello world program in C#.
+Other Languages to follow: Java, Perl, Javascript.
