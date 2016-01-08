@@ -23,8 +23,7 @@ namespace HelloWorld.View
 
                 Console.ReadLine();
             
-
-
+            
             }
         }
     }
