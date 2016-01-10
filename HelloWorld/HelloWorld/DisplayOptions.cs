@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using System.Resources;
+using System.Configuration;
+
+[assembly: System.Resources.NeutralResourcesLanguage("en")]
 
 namespace HelloWorld.Business
 {
@@ -12,28 +16,36 @@ namespace HelloWorld.Business
         {
             if (int.Parse(selection) == 1)
             {
-                English egreet = new English(name);
-                return (egreet.ToString());
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+                return ($"{Resource.Lang.Greeting} {name} !!!");
 
             }
 
             else if (int.Parse(selection) == 2)
             {
-                Fiji fijigreet = new Fiji(name);
-                return (fijigreet.ToString());
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fi");
+                return ($"{Resource.Lang.Greeting} {name} !!!");
 
             }
 
             else if (int.Parse(selection) == 3)
             {
-                French frenchgreet = new French(name);
-                return (frenchgreet.ToString());
+
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr");
+                return ($"{Resource.Lang.Greeting} {name} !!!");
+
+            }
+
+            else if (int.Parse(selection) == 4)
+            {
+
+                return (ConfigurationManager.AppSettings["ExitMessage"]);
 
             }
             else
             {
 
-                return ("Invalid Selection!!!");
+                return (ConfigurationManager.AppSettings["ErrorMessage"]);
             }
         }
 

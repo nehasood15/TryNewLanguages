@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HelloWorld.Business;
+using System.Configuration;
 
 namespace HelloWorld.View
 {
@@ -11,21 +12,24 @@ namespace HelloWorld.View
     {
         static void Main(string[] args)
         {
-                Console.WriteLine("Enter Name");
+            string selection;
+            do
+            {
+                Console.WriteLine(ConfigurationManager.AppSettings["AskName"]);
                 string name = Console.ReadLine().ToUpper();
-           
-                Console.WriteLine("Please select following choices \n 1. Greet in English 2. Greet in Fiji 3. Greet in French");
-
-                string selection = Console.ReadLine();
-
+                Console.WriteLine(ConfigurationManager.AppSettings["Options"]);
+                selection = Console.ReadLine();
                 DisplayOptions option = new DisplayOptions();
                 Console.WriteLine(option.MenuParsing(selection, name));
-
                 Console.ReadLine();
-            
-            
-            }
+            } while (int.Parse(selection) != 4);
+
+            Environment.Exit(0);
+
         }
+
     }
+ }
+    
 
 
